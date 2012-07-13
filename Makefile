@@ -67,10 +67,10 @@ install-main: $(INSTALL_BINARIES) $(INSTALL_ICONS) $(INSTALL_DESKTOP_FILES)
 	install -D -m 644 linux/share/functions $(PREFIX)/share/pai/functions
 
 install-data: linux/share/functions
-        ./pai-install-data.sh $(PTE_PREFIX)/pai
+	./pai-install-data.sh $(PTE_PREFIX)/pai
 
 install-doc: linux/share/functions
-        ./pai-install-doc.sh $(PTE_PREFIX)/doc/pai
+	./pai-install-doc.sh $(PTE_PREFIX)/doc/pai
 
 clean:
 	rm -f icons/*.png linux/desktop/*.desktop linux/share/functions
