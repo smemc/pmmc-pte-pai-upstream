@@ -135,12 +135,13 @@ pai_install_data() {
 
 pai_patch_data() {
     dest_dir=${1}
+    patch_dir=${2}
     count=0
 
     echo -n "Patching HTML files according to new filenames and/or HTML code for accents... "
 
     (cd ${dest_dir}
-    for patch_file in patches/*
+    for patch_file in ${patch_dir}/*
     do
         patch --quiet -p0 < ${patch_file}
         count=$(( count + 1 ))
@@ -154,7 +155,7 @@ pai_patch_data() {
 pai_install_doc() {
     orig_dir=${1}
     dest_dir=${2}
-    oldnames_doc=${orig_dir}/pai-doc-old-names.tmp.txt
+    oldnames_doc=${orig_dir}/../pai-doc-old-names.tmp.txt
 
     (cd ${orig_dir}
     mv "./Histórico da versão 2.pdf" ./pmmc-pte-pai-changelog.pdf
