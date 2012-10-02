@@ -1,6 +1,6 @@
 VERSION=@VERSION@
 SHA256SUM=@SHA256SUM@
-FILENAME=pai-${VERSION}.tar.gz
+FILENAME=PAI-${VERSION}.tar.gz
 URI=http://www.orientadores.pmmc.com.br/cae/pai/download/${FILENAME}
 
 pai_exit_with_error() {
